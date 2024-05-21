@@ -10,7 +10,7 @@ This iOS application uses SwiftUI and the MVVM architecture to list messages ret
 2. **Post Details**: Tapping on a post navigates the user to a detail view showing the full information of the post.
 3. **Favorites**: Users can mark posts as favorites. Favorite posts are displayed with a star icon and always appear at the top of the list.
 4. **Delete Posts**: Users can delete individual posts or all posts at once.
-5. **Persistence**: Favorite and deleted posts are saved using `UserDefaults` to maintain data persistence between sessions.
+5. **Persistence**: Favorite and deleted posts are saved using UserDefaults to maintain data persistence between sessions.
 6. **Segmented Control**: Users can toggle between viewing all posts and only favorites.
 7. **Loading Indicator**: A spinner is shown while posts are loading.
 8. **Delete Confirmation**: A warning button asks for confirmation before deleting a post.

@@ -18,7 +18,7 @@ struct PostsView: View {
                 .padding()
                 
                 if viewModel.isLoading {
-                    ProgressView("Loading...")
+                    ProgressView("Loading")
                         .progressViewStyle(CircularProgressViewStyle())
                         .scaleEffect(1.5)
                 } else {
@@ -31,7 +31,7 @@ struct PostsView: View {
                                 Button {
                                     viewModel.toggleFavorite(postId: post.id)
                                 } label : {
-                                    Label("Favorito", systemImage: "star.fill")
+                                    Label("Favorite", systemImage: "star.fill")
                                 }
                                 .tint(.yellow)
                             }
@@ -40,7 +40,7 @@ struct PostsView: View {
                                     postToDelete = post
                                     showAlert = true
                                 } label: {
-                                    Label("Borrar", systemImage: "trash.fill")
+                                    Label("Delete", systemImage: "trash.fill")
                                 }
                                 .tint(.red)
                             }
