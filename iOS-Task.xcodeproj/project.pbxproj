@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99079D952C10BEE10035E779 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 99079D942C10BEE10035E779 /* Realm */; };
+		99079D972C10BEE10035E779 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99079D962C10BEE10035E779 /* RealmSwift */; };
+		990924C92C052C000084DC59 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 990924C82C052C000084DC59 /* Localizable.xcstrings */; };
+		990AE4312C0FC8B6009D7670 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 990AE4302C0FC8B6009D7670 /* Alamofire */; };
+		990AE4332C0FC8B6009D7670 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 990AE4322C0FC8B6009D7670 /* AlamofireDynamic */; };
+		991F1C3A2C0776B200CBCF8C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F1C392C0776B200CBCF8C /* LanguageManager.swift */; };
+		991F1C3E2C07C4A800CBCF8C /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F1C3D2C07C4A800CBCF8C /* String+Localization.swift */; };
 		993017042BF7F37200853FAF /* iOS_TaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993017032BF7F37200853FAF /* iOS_TaskApp.swift */; };
 		993017082BF7F37400853FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993017072BF7F37400853FAF /* Assets.xcassets */; };
 		9930170B2BF7F37500853FAF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9930170A2BF7F37500853FAF /* Preview Assets.xcassets */; };
@@ -16,9 +23,14 @@
 		9930171E2BF8089100853FAF /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9930171D2BF8089100853FAF /* PostDetailView.swift */; };
 		993017202BF808CB00853FAF /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9930171F2BF808CB00853FAF /* PostsView.swift */; };
 		993017222BF8096700853FAF /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993017212BF8096700853FAF /* PostsViewModel.swift */; };
+		99FDC50D2C0F686C008BC2B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FDC50C2C0F686C008BC2B9 /* User.swift */; };
+		99FDC5112C0F693F008BC2B9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FDC5102C0F693F008BC2B9 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		990924C82C052C000084DC59 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		991F1C392C0776B200CBCF8C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		991F1C3D2C07C4A800CBCF8C /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		993017002BF7F37200853FAF /* iOS-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		993017032BF7F37200853FAF /* iOS_TaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TaskApp.swift; sourceTree = "<group>"; };
 		993017072BF7F37400853FAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +42,8 @@
 		9930171F2BF808CB00853FAF /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		993017212BF8096700853FAF /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		9960C3DA2BFBFD3500C9C7F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		99FDC50C2C0F686C008BC2B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		99FDC5102C0F693F008BC2B9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99079D972C10BEE10035E779 /* RealmSwift in Frameworks */,
+				99079D952C10BEE10035E779 /* Realm in Frameworks */,
+				990AE4332C0FC8B6009D7670 /* AlamofireDynamic in Frameworks */,
+				990AE4312C0FC8B6009D7670 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,9 +64,11 @@
 		993016F72BF7F37200853FAF = {
 			isa = PBXGroup;
 			children = (
+				990924C82C052C000084DC59 /* Localizable.xcstrings */,
 				9960C3DA2BFBFD3500C9C7F7 /* README.md */,
 				993017022BF7F37200853FAF /* iOS-Task */,
 				993017012BF7F37200853FAF /* Products */,
+				E659193AF7B664C1E23B32D7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +90,7 @@
 				993017032BF7F37200853FAF /* iOS_TaskApp.swift */,
 				993017072BF7F37400853FAF /* Assets.xcassets */,
 				993017092BF7F37500853FAF /* Preview Content */,
+				991F1C3D2C07C4A800CBCF8C /* String+Localization.swift */,
 			);
 			path = "iOS-Task";
 			sourceTree = "<group>";
@@ -96,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				993017142BF7F80400853FAF /* Post.swift */,
+				99FDC50C2C0F686C008BC2B9 /* User.swift */,
+				99FDC5102C0F693F008BC2B9 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,8 +135,16 @@
 			isa = PBXGroup;
 			children = (
 				993017172BF7FB4100853FAF /* ApiManager.swift */,
+				991F1C392C0776B200CBCF8C /* LanguageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		E659193AF7B664C1E23B32D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +163,12 @@
 			dependencies = (
 			);
 			name = "iOS-Task";
+			packageProductDependencies = (
+				990AE4302C0FC8B6009D7670 /* Alamofire */,
+				990AE4322C0FC8B6009D7670 /* AlamofireDynamic */,
+				99079D942C10BEE10035E779 /* Realm */,
+				99079D962C10BEE10035E779 /* RealmSwift */,
+			);
 			productName = "iOS-Task";
 			productReference = 993017002BF7F37200853FAF /* iOS-Task.app */;
 			productType = "com.apple.product-type.application";
@@ -158,8 +195,14 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
+				"pt-PT",
 			);
 			mainGroup = 993016F72BF7F37200853FAF;
+			packageReferences = (
+				990AE42F2C0FC8B6009D7670 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				99079D932C10BEE10035E779 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 993017012BF7F37200853FAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +219,7 @@
 			files = (
 				9930170B2BF7F37500853FAF /* Preview Assets.xcassets in Resources */,
 				993017082BF7F37400853FAF /* Assets.xcassets in Resources */,
+				990924C92C052C000084DC59 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,10 +233,14 @@
 				993017182BF7FB4100853FAF /* ApiManager.swift in Sources */,
 				993017152BF7F80400853FAF /* Post.swift in Sources */,
 				9930171C2BF8087D00853FAF /* PostRowView.swift in Sources */,
+				991F1C3E2C07C4A800CBCF8C /* String+Localization.swift in Sources */,
 				9930171E2BF8089100853FAF /* PostDetailView.swift in Sources */,
 				993017222BF8096700853FAF /* PostsViewModel.swift in Sources */,
 				993017202BF808CB00853FAF /* PostsView.swift in Sources */,
 				993017042BF7F37200853FAF /* iOS_TaskApp.swift in Sources */,
+				99FDC50D2C0F686C008BC2B9 /* User.swift in Sources */,
+				99FDC5112C0F693F008BC2B9 /* Comment.swift in Sources */,
+				991F1C3A2C0776B200CBCF8C /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,12 +375,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS-Task/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,12 +405,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iOS-Task/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +448,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99079D932C10BEE10035E779 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.32.3;
+			};
+		};
+		990AE42F2C0FC8B6009D7670 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99079D942C10BEE10035E779 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99079D932C10BEE10035E779 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		99079D962C10BEE10035E779 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99079D932C10BEE10035E779 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		990AE4302C0FC8B6009D7670 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 990AE42F2C0FC8B6009D7670 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		990AE4322C0FC8B6009D7670 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 990AE42F2C0FC8B6009D7670 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 993016F82BF7F37200853FAF /* Project object */;
 }

@@ -1,5 +1,5 @@
 import Foundation
-import Combine
+import Alamofire
 
 class ApiManager {
     static let shared = ApiManager()
@@ -7,29 +7,45 @@ class ApiManager {
     
     private init() {}
     
-    func fetchPosts() -> AnyPublisher<[Post], Error>{
-        let url = URL(string: "\(baseURL)/posts")!
+    func fetchPosts(completion: @escaping (Result<[Post], Error>) -> Void) {
+        let url = "\(baseURL)/posts"
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map{$0.data}
-            .decode(type: [Post].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+        AF.request(url).validate().responseDecodable(of: [Post].self) { response in
+            guard let posts = try? response.result.get() else {
+                if let error = response.error {
+                    return completion(.failure(error))
+                }
+                return
+            }
+            completion(.success(posts))
+        }
     }
     
-    func fetchUser(userId: Int)-> AnyPublisher<User,Error>{
-        let url = URL(string: "\(baseURL)/users/\(userId)")!
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: User.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+    func fetchUser(userId: Int, completion: @escaping (Result<User, Error>) -> Void) {
+        let url = "\(baseURL)/users/\(userId)"
+        
+        AF.request(url).validate().responseDecodable(of: User.self) { response in
+            guard let user = try? response.result.get() else {
+                if let error = response.error {
+                    return completion(.failure(error))
+                }
+                return
+            }
+            completion(.success(user))
+        }
     }
     
-    func fetchComments(postId: Int) -> AnyPublisher<[Comment], Error>{
-        let url = URL(string: "\(baseURL)/posts/\(postId)/comments")!
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: [Comment].self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+    func fetchComments(postId: Int, completion: @escaping (Result<[Comment], Error>) -> Void) {
+        let url = "\(baseURL)/posts/\(postId)/comments"
+        
+        AF.request(url).validate().responseDecodable(of: [Comment].self) { response in
+            guard let comments = try? response.result.get() else {
+                if let error = response.error {
+                    return completion(.failure(error))
+                }
+                return
+            }
+            completion(.success(comments))
+        }
     }
 }

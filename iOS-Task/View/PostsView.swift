@@ -1,4 +1,3 @@
-import Foundation
 import SwiftUI
 
 struct PostsView: View {
@@ -6,21 +5,24 @@ struct PostsView: View {
     @State private var selectedSegment = 0
     @State private var postToDelete: Post?
     @State private var showAlert = false
+    @EnvironmentObject var languageManager: LanguageManager
     
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Posts", selection: $selectedSegment) {
-                    Text("All Posts").tag(0)
-                    Text("Favorites").tag(1)
+                Picker("Posts".localized, selection: $selectedSegment) {
+                    Text("All Posts".localized).tag(0)
+                    Text("Favorites".localized).tag(1)
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 
                 if viewModel.isLoading {
-                    ProgressView("Loading")
+                    Spacer()
+                    ProgressView("Loading".localized)
                         .progressViewStyle(CircularProgressViewStyle())
                         .scaleEffect(1.5)
+                    Spacer()
                 } else {
                     List {
                         ForEach(filteredPosts) { post in
@@ -44,21 +46,13 @@ struct PostsView: View {
                                 }
                                 .tint(.red)
                             }
-                            
                         }
                     }
-                    .navigationTitle("Posts")
+                    .navigationTitle("Posts".localized)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button {
-                                viewModel.removeAllPosts()
-                            } label: {
-                                Image(systemName: "trash")
-                            }
-                        }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
-                                viewModel.fetchPosts()
+                                viewModel.loadDeletedPosts()
                             } label: {
                                 Image(systemName: "arrow.triangle.2.circlepath")
                             }
@@ -66,8 +60,8 @@ struct PostsView: View {
                     }
                     .alert(isPresented: $showAlert) {
                         Alert(
-                            title: Text("Confirm Post Deletion"),
-                            primaryButton: .destructive(Text("Delete")) {
+                            title: Text("Confirm Post Deletion".localized),
+                            primaryButton: .destructive(Text("Delete".localized)) {
                                 if let post = postToDelete {
                                     viewModel.removePost(postId: post.id)
                                 }
@@ -81,6 +75,9 @@ struct PostsView: View {
         .onAppear {
             viewModel.fetchPosts()
         }
+        .onReceive(NotificationCenter.default.publisher(for: .languageChanged)) { _ in
+            selectedSegment = selectedSegment
+        }
     }
     
     var filteredPosts: [Post] {
@@ -90,16 +87,22 @@ struct PostsView: View {
             return viewModel.posts.filter { viewModel.favorites.contains($0.id) }
         }
     }
+    
+    private func changeLanguage(to languageCode: String) {
+        languageManager.setLanguage(languageCode: languageCode)
+    }
 }
 
 struct ContentView: View {
     var body: some View {
         PostsView()
+            .environmentObject(LanguageManager.shared)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(LanguageManager.shared)
     }
 }

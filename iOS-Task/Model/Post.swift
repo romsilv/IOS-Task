@@ -1,23 +1,17 @@
 import Foundation
+import RealmSwift
 
-struct Post: Codable, Identifiable{
-    let id: Int
-    let userId: Int
-    let title: String
-    let body: String
+class Post: Object, Decodable,Identifiable {
+    @Persisted(primaryKey: true) var id: Int = 0
+    @Persisted var userId: Int = 0
+    @Persisted var title: String = ""
+    @Persisted var body: String = ""
 }
 
-struct User: Identifiable, Codable{
-    let id: Int
-    let name: String
-    let username: String
-    let email: String
+class FavoritePost: Object {
+    @Persisted(primaryKey: true) var postId: Int = 0
 }
 
-struct Comment: Identifiable, Codable{
-    let id: Int
-    let postId: Int
-    let name: String
-    let email: String
-    let body: String
+class DeletedPost: Object {
+    @Persisted(primaryKey: true) var postId: Int = 0
 }
